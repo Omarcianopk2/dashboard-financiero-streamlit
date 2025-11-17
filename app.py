@@ -14,8 +14,9 @@ st.set_page_config(
 # "Big Seven"
 TICKERS_BIG_SEVEN = ['AAPL', 'MSFT', 'NVDA', 'GOOGL', 'AMZN', 'META', 'TSLA']
 
-# 5 EMPRESAS DE AUTOS
-TICKERS_CUSTOM_FIVE = ['F', 'GM', 'TM', 'HMC', 'RACE'] # Ford, GM, Toyota, Honda, Ferrari
+TICKERS_CUSTOM_FIVE = ['WALMEX.MX', 'AMXL.MX', 'GMEXICOB.MX', 'FMX', 'GFNORTEO.MX'] 
+# Walmex, America Movil, Grupo Mexico, Femsa, Banorte
+
 
 # Tipos de Cambio
 TICKERS_FX = ['MXN=X', 'EURUSD=X'] # USD/MXN y USD/EUR
