@@ -14,9 +14,9 @@ st.set_page_config(
 # "Big Seven"
 TICKERS_BIG_SEVEN = ['AAPL', 'MSFT', 'NVDA', 'GOOGL', 'AMZN', 'META', 'TSLA']
 
+# === CAMBIO: 5 EMPRESAS DE MÉXICO (IPC) ===
 TICKERS_CUSTOM_FIVE = ['WALMEX.MX', 'AMXL.MX', 'GMEXICOB.MX', 'FMX', 'GFNORTEO.MX'] 
 # Walmex, America Movil, Grupo Mexico, Femsa, Banorte
-
 
 # Tipos de Cambio
 TICKERS_FX = ['MXN=X', 'EURUSD=X'] # USD/MXN y USD/EUR
@@ -50,7 +50,13 @@ if not data_historica.empty:
         'SHY': 'Bonos_Tesoro_USA (SHY)',
         'CETETRC.MX': 'CETES_Mexico (ETF)',
         'MXN=X': 'USD/MXN',
-        'EURUSD=X': 'EUR/USD'
+        'EURUSD=X': 'EUR/USD',
+        # === CAMBIO: Renombrar tickers de México ===
+        'WALMEX.MX': 'Walmex (WALMEX.MX)',
+        'AMXL.MX': 'America Movil (AMXL.MX)',
+        'GMEXICOB.MX': 'Grupo Mexico (GMEXICOB.MX)',
+        'FMX': 'Femsa (FMX)',
+        'GFNORTEO.MX': 'Banorte (GFNORTEO.MX)'
     }, inplace=True)
 
 if not data_historica.empty:
@@ -60,11 +66,13 @@ if not data_historica.empty:
 
     # --- Sidebar: Filtros y Storytelling ---
     st.sidebar.title("Análisis Financiero Interactivo")
+    
+    # === CAMBIO: Actualizar el storytelling ===
     st.sidebar.markdown("""
-    Este dashboard cuenta la historia de cómo los gigantes tecnológicos ('Big Seven'),
-    un portafolio diversificado, y las tasas de interés han interactuado en
-    los últimos años, poniendo especial énfasis en la perspectiva del
-    inversor mexicano (vs. USD/MXN y CETES).
+    Este dashboard compara el rendimiento de los **gigantes tecnológicos globales ('Big Seven')** contra un **portafolio de las empresas líderes en México (IPC)**. 
+    
+    Pone especial énfasis en la perspectiva del inversor mexicano, analizando el riesgo 
+    del tipo de cambio (`USD/MXN`) y el rendimiento 'seguro' de los (`CETES_Mexico`).
     """)
     
     st.sidebar.header("Filtros del Dashboard")
